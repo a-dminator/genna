@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"html/template"
 
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/model"
 )
 
 // Stores package info

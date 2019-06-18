@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/dizzyfool/genna/database"
-	"github.com/dizzyfool/genna/generator"
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/database"
+	"github.com/a-dminator/genna/generator"
+	"github.com/a-dminator/genna/model"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"

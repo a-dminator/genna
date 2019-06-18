@@ -3,7 +3,7 @@ package generator
 import (
 	"strings"
 
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/model"
 )
 
 // Options for generator

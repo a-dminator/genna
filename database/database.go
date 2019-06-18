@@ -1,7 +1,6 @@
 package database
 
 import (
-	"context"
 	"time"
 
 	"github.com/go-pg/pg"
@@ -21,21 +20,20 @@ func NewQueryLogger(logger *zap.Logger) QueryLogger {
 }
 
 // BeforeQuery stores start time in custom data array
-func (ql QueryLogger) BeforeQuery(ctx context.Context, event *pg.QueryEvent) (context.Context, error) {
-	event.Stash["startedAt"] = time.Now()
-	return ctx, nil
+func (ql QueryLogger) BeforeQuery(event *pg.QueryEvent) {
+	event.Data["startedAt"] = time.Now()
 }
 
 // AfterQuery calculates execution time and print it with formatted query
-func (ql QueryLogger) AfterQuery(ctx context.Context, event *pg.QueryEvent) (context.Context, error) {
+func (ql QueryLogger) AfterQuery(event *pg.QueryEvent) {
 	query, err := event.FormattedQuery()
 	if err != nil {
 		ql.logger.Error("formatted query error", zap.Error(err))
 	}
 
 	var since time.Duration
-	if event.Stash != nil {
-		if v, ok := event.Stash["startedAt"]; ok {
+	if event.Data != nil {
+		if v, ok := event.Data["startedAt"]; ok {
 			if startAt, ok := v.(time.Time); ok {
 				since = time.Since(startAt)
 			}
@@ -43,7 +41,6 @@ func (ql QueryLogger) AfterQuery(ctx context.Context, event *pg.QueryEvent) (con
 	}
 
 	ql.logger.Debug(query, zap.Duration("duration", since))
-	return ctx, nil
 }
 
 // NewDatabase creates database connection

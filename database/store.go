@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/model"
 
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"

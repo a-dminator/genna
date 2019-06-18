@@ -3,7 +3,7 @@ package database
 import (
 	"testing"
 
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/model"
 
 	"go.uber.org/zap"
 )

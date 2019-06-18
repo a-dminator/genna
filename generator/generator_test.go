@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/dizzyfool/genna/database"
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/database"
+	"github.com/a-dminator/genna/model"
 
 	"go.uber.org/zap"
 )

@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/dizzyfool/genna/cmd"
+import "github.com/a-dminator/genna/cmd"
 
 func main() {
 	cmd.Execute()

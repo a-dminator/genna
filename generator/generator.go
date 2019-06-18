@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/dizzyfool/genna/model"
+	"github.com/a-dminator/genna/model"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
